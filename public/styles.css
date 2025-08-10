@@ -14,7 +14,7 @@ body {
 /* Main Chat Container */
 .chat-container {
     width: 100%;
-    max-width: 400px; /* More phone-like width */
+    max-width: 400px;
     height: 90vh;
     max-height: 800px;
     margin: 20px;
@@ -81,13 +81,13 @@ body {
     word-wrap: break-word;
 }
 
-/* Bot (Girlfriend) Message Style */
+/* Bot Message Style */
 .bot-message {
     align-self: flex-start;
 }
 
 .bot-message .message-bubble {
-    background-color: #f1f0f0; /* Light gray for received messages */
+    background-color: #f1f0f0;
     color: #333;
     border-top-left-radius: 4px;
 }
@@ -98,7 +98,7 @@ body {
 }
 
 .user-message .message-bubble {
-    background-color: #ff69b4; /* Hot Pink for sent messages */
+    background-color: #ff69b4;
     color: white;
     border-top-right-radius: 4px;
 }
@@ -155,10 +155,30 @@ body {
     background-color: #e05e9e;
 }
 
-/* Media Queries for Responsiveness */
+/* Chat Footer */
+.chat-footer {
+    text-align: center;
+    padding: 8px;
+    font-size: 0.8em;
+    color: #888;
+    background-color: #fff;
+    border-top: 1px solid #f0f0f0;
+}
+
+.chat-footer a {
+    color: #ff69b4;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.chat-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
 @media (max-width: 600px) {
     body {
-        background: #fff; /* White background for mobile */
+        background: #fff;
     }
 
     .chat-container {
@@ -169,18 +189,4 @@ body {
         max-width: 100%;
         max-height: 100vh;
     }
-}
-footer {
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9em;
-  color: #555;
-}
-footer a {
-  color: #e1306c;
-  text-decoration: none;
-  font-weight: bold;
-}
-footer a:hover {
-  text-decoration: underline;
 }

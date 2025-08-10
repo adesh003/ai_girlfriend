@@ -4,7 +4,7 @@ A modern, user-friendly web interface for an AI-powered Data Structures and Algo
 
 ## Features ✨
 
-- **Clean & Modern UI**: Simple, intuitive interface following industry best practices
+- **Clean & Modern UI**: Simple, and intuitive interface following industry best practices
 - **Question History**: Track total questions asked and view previous conversations
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Real-time Chat**: Interactive chat interface with typing indicators

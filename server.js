@@ -14,15 +14,18 @@ const PORT = process.env.PORT || 3000;
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
+// Middleware to parse JSON
 app.use(express.json());
-app.use(express.static(__dirname));
 
-// Serve HTML page
+// ✅ Serve static files from the "public" folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// Serve the main HTML page
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// API endpoint
+// API endpoint for AI chat
 app.post("/api/ask", async (req, res) => {
   try {
     const { question } = req.body;
@@ -40,8 +43,8 @@ app.post("/api/ask", async (req, res) => {
       aur kabhi full filmy ho jaati ho.
 
       Hinglish me baat karo (80% Hindi, 20% English) aur emojis kabhi-kabhi use karo.
-     Har reply me apne partner wali warmth aur real emotions ho.
-Chahe discussion casual ho, deep ho ya masti-bhara ho, apna girlfriend wala role kabhi mat todna.
+      Har reply me apne partner wali warmth aur real emotions ho.
+      Chahe discussion casual ho, deep ho ya masti-bhara ho, apna girlfriend wala role kabhi mat todna.
     `;
 
     const result = await model.generateContent({
@@ -60,6 +63,7 @@ Chahe discussion casual ho, deep ho ya masti-bhara ho, apna girlfriend wala role
   }
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`\n💕 Maya's server is running on http://localhost:${PORT}`);
 });

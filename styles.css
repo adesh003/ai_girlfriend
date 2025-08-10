@@ -1,0 +1,172 @@
+/* General Body and Font Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffe4e1, #ffc0cb); /* Soft Pink Gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Main Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 400px; /* More phone-like width */
+    height: 90vh;
+    max-height: 800px;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.chat-header .avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.chat-header .user-info h1 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+}
+
+.chat-header .user-info p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #4caf50; /* Green for "Online" */
+    font-weight: 500;
+}
+
+/* Chat Messages Area */
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Individual Message Bubbles */
+.message {
+    display: flex;
+    max-width: 80%;
+}
+
+.message-bubble {
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* Bot (Girlfriend) Message Style */
+.bot-message {
+    align-self: flex-start;
+}
+
+.bot-message .message-bubble {
+    background-color: #f1f0f0; /* Light gray for received messages */
+    color: #333;
+    border-top-left-radius: 4px;
+}
+
+/* User Message Style */
+.user-message {
+    align-self: flex-end;
+}
+
+.user-message .message-bubble {
+    background-color: #ff69b4; /* Hot Pink for sent messages */
+    color: white;
+    border-top-right-radius: 4px;
+}
+
+/* Chat Input Area */
+.chat-input-area {
+    padding: 15px 20px;
+    border-top: 1px solid #f0f0f0;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.chat-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#questionInput {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    resize: none;
+    line-height: 1.4;
+    max-height: 100px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+#questionInput:focus {
+    border-color: #ff69b4;
+    outline: none;
+}
+
+.send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+    background-color: #e05e9e;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    body {
+        background: #fff; /* White background for mobile */
+    }
+
+    .chat-container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        height: 100vh;
+        max-width: 100%;
+        max-height: 100vh;
+    }
+}
